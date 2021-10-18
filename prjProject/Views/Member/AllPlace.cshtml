@@ -1,0 +1,161 @@
+﻿@using PagedList
+@using PagedList.Mvc
+
+@model IPagedList<prjProject.Models.TableTravels1081728>
+
+@{
+    ViewBag.Title = "AllPlace";
+    Layout = "~/Views/Shared/_LayoutMember.cshtml";
+}
+
+<link href="~/Content/PagedList.css" rel="stylesheet" />
+
+<div id="myCarousel" class="carousel slide">
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+        <li data-target="#myCarousel" data-slide-to="4"></li>
+        <li data-target="#myCarousel" data-slide-to="5"></li>
+        <li data-target="#myCarousel" data-slide-to="6"></li>
+        <li data-target="#myCarousel" data-slide-to="7"></li>
+        <li data-target="#myCarousel" data-slide-to="8"></li>
+        <li data-target="#myCarousel" data-slide-to="9"></li>
+        <li data-target="#myCarousel" data-slide-to="10"></li>
+        <li data-target="#myCarousel" data-slide-to="11"></li>
+        <li data-target="#myCarousel" data-slide-to="12"></li>
+        <li data-target="#myCarousel" data-slide-to="13"></li>
+        <li data-target="#myCarousel" data-slide-to="14"></li>
+        <li data-target="#myCarousel" data-slide-to="15"></li>
+    </ol>
+    <div class="carousel-inner" id="back">
+        <div class="item active">
+            <img src="~/image/fu1.jpg" width="100%">
+            <div class="carousel-caption">
+                <h1>富士山</h1>
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/image/qq1.jpeg" width="100%">
+            <div class="carousel-caption">
+                <h1>清水寺</h1>
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/image/da1.jpg" width="100%">
+            <div class="carousel-caption">
+                <h1>大阪城</h1>
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/image/tt1.jpg" width="100%">
+            <div class="carousel-caption">
+                <h1>大通公園</h1>
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/image/fish1.jpg" width="100%">
+            <div class="carousel-caption">
+                <h1>魚尾獅公園</h1>
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/image/sin.jpg" width="100%">
+            <div class="carousel-caption">
+                <h1>新加坡環球影城</h1>
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/image/flo1.jpg" width="100%">
+            <div class="carousel-caption">
+                <h1>濱海灣花園</h1>
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/image/ani2.jpg" width="100%">
+            <div class="carousel-caption">
+                <h1>夜間野生動物園</h1>
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/image/aa1.jpg" width="100%">
+            <div class="carousel-caption">
+                <h1>艾菲爾鐵塔</h1>
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/image/rr1.jpg" width="100%">
+            <div class="carousel-caption">
+                <h1>羅浮宮</h1>
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/image/xx1.jpg" width="100%">
+            <div class="carousel-caption">
+                <h1>香榭麗舍大街</h1>
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/image/we1.jpg" width="100%">
+            <div class="carousel-caption">
+                <h1>蔚藍海岸</h1>
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/image/ku2.jpg" width="100%">
+            <div class="carousel-caption">
+                <h1>大峽谷國家公園</h1>
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/image/zz1.jpg" width="100%">
+            <div class="carousel-caption">
+                <h1>自由女神像</h1>
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/image/di1.jpg" width="100%">
+            <div class="carousel-caption">
+                <h1>時代廣場</h1>
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/image/pu2.jpg" width="100%">
+            <div class="carousel-caption">
+                <h1>尼加拉瀑布</h1>
+            </div>
+        </div>
+    </div>
+    <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="carousel-control right" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+</div>
+
+<center><h2>所有景點</h2></center>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="row">
+            <div class="col-md-7">
+                <img src="~/image/@item.TraImage" width="600" style="float:left">
+                <br></br>
+                <hr>
+                <br></br>
+            </div>
+            <div class="col-md-5">
+                <h4><font color="#006400"><b>@Html.DisplayFor(modelItem => item.Place)</b></font></h4>
+                <br></br>
+                <p style="background:#FFFFBB; padding:1cm">
+                    @Html.DisplayFor(modelItem => item.Content)
+                </p>
+            </div>
+        </div>
+    }
+</div>
+
+<center>@Html.PagedListPager(Model, page => Url.Action("AllPlace", new { page }))</center>

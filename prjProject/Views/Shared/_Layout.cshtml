@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - TraVeler旅遊網</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="~/image/T.png" type="~/image/x-png" />
+    <link rel="shortcut icon" href="~/image/T.png" type="~/image/x-png" />
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+TC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+</head>
+
+<style>
+    li a:hover {
+        background-color: #EECBAD;
+    }
+</style>
+
+<body>
+    <div class="navbar navbar-default navbar-fixed-top" style="background: #EEE0E5">
+        <div class="container" >
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">導覽按鈕</span>
+                    <span class="icon-bar"  style="background:white"></span>
+                    <span class="icon-bar"  style="background:white"></span>
+                    <span class="icon-bar"  style="background:white"></span>
+                </button>
+                @Html.ActionLink("TraVeler", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active">@Html.ActionLink("首頁", "Index", "Home")</li>
+                    <li>@Html.ActionLink("所有景點", "AllPlace", "Home")</li>
+                    <li>@Html.ActionLink("景點介紹", "Introduction", "Home")</li>
+                    <li>@Html.ActionLink("景點查詢", "PlaceSearch", "Home")</li>
+                    <li>@Html.ActionLink("票券訂購", "Ticket", "Home")</li>
+                    <li>@Html.ActionLink("旅行測驗", "Test", "Home")</li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>@Html.ActionLink("註冊", "Register", "Home")</li>
+                    <li>@Html.ActionLink("登入", "Login", "Home")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; <b>TraVeler™@DateTime.Now.Year </b> International Travel Agency &middot; Privacy Policy&middot;  Terms & Conditions</p>
+                <p class="text-right">
+                    <a href="https://www.instagram.com/pinhui0627/?hl=zh-tw"><i class="fab fa-instagram fa-2x" style="color:black"></i></a>&nbsp;
+                    <a href="https://www.facebook.com/profile.php?id=100026497248153&ref=bookmarks"><i class="fab fa-facebook fa-2x" style="color:black"></i></a>&nbsp;
+                    <a href="https://www.youtube.com/"><i class="fab fa-youtube fa-2x" style="color:black"></i></a>
+                </p>
+        </footer>
+    </div>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

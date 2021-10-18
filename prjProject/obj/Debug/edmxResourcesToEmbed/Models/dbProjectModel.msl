@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbProjectModelStoreContainer" CdmEntityContainer="dbFinalProjectEntities">
+    <EntitySetMapping Name="TableCountrys1081728">
+      <EntityTypeMapping TypeName="dbProjectModel.TableCountrys1081728">
+        <MappingFragment StoreEntitySet="TableCountrys1081728">
+          <ScalarProperty Name="CounId" ColumnName="CounId" />
+          <ScalarProperty Name="CounName" ColumnName="CounName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TableCusOrderDetails1081728">
+      <EntityTypeMapping TypeName="dbProjectModel.TableCusOrderDetails1081728">
+        <MappingFragment StoreEntitySet="TableCusOrderDetails1081728">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="OrderGuid" ColumnName="OrderGuid" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="TicId" ColumnName="TicId" />
+          <ScalarProperty Name="TicName" ColumnName="TicName" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TableCusOrders1081728">
+      <EntityTypeMapping TypeName="dbProjectModel.TableCusOrders1081728">
+        <MappingFragment StoreEntitySet="TableCusOrders1081728">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="OrderGuid" ColumnName="OrderGuid" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Receiver" ColumnName="Receiver" />
+          <ScalarProperty Name="ReEmail" ColumnName="ReEmail" />
+          <ScalarProperty Name="ReOrderAddress" ColumnName="ReOrderAddress" />
+          <ScalarProperty Name="ReDate" ColumnName="ReDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TableCustomers1081728">
+      <EntityTypeMapping TypeName="dbProjectModel.TableCustomers1081728">
+        <MappingFragment StoreEntitySet="TableCustomers1081728">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserPwd" ColumnName="UserPwd" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="UserAddress" ColumnName="UserAddress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TableTickets1081728">
+      <EntityTypeMapping TypeName="dbProjectModel.TableTickets1081728">
+        <MappingFragment StoreEntitySet="TableTickets1081728">
+          <ScalarProperty Name="TicId" ColumnName="TicId" />
+          <ScalarProperty Name="TicName" ColumnName="TicName" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="TictImage" ColumnName="TictImage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TableTravels1081728">
+      <EntityTypeMapping TypeName="dbProjectModel.TableTravels1081728">
+        <MappingFragment StoreEntitySet="TableTravels1081728">
+          <ScalarProperty Name="PlaceId" ColumnName="PlaceId" />
+          <ScalarProperty Name="CounId" ColumnName="CounId" />
+          <ScalarProperty Name="CounName" ColumnName="CounName" />
+          <ScalarProperty Name="Place" ColumnName="Place" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="TraImage" ColumnName="TraImage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

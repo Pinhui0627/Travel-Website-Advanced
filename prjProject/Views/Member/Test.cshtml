@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "Test";
+    Layout = "~/Views/Shared/_LayoutMember.cshtml";
+}
+
+<center>
+    <h2 style="color:brown">旅行心理測驗</h2>
+    <h4 style="color:burlywood">隨意走？還是行程緊湊到爆？測出你的旅行風格及最適合的景點目的地！</h4>
+</center>
+<div class="container">
+    <form action="@Url.Action("TestResult")" method="post">
+        <div class="form-vertical">
+            <hr />
+            <div class="form-group">
+                <p>1. 到達飯店／民宿後，會先做什麼事？</p>
+                <label><input type="radio" name="q1" value="7" checked />卸下行李後，馬上出去跑景點</label>
+                <label><input type="radio" name="q1" value="1" />在住宿處稍微休息、整理一下再繼續行程</label>
+            </div>
+            <div class="form-group">
+                <p>2. 兩天一夜簡短的旅程，你只能選擇一個景點的話，你會選擇？</p>
+                <label><input type="radio" name="q2" value="5" checked />能夠體驗從沒有體驗過的新鮮事的行程</label>
+                <label><input type="radio" name="q2" value="10" />充滿活力、熱鬧氣息的旅遊勝地</label>
+                <label><input type="radio" name="q2" value="1" />可以安靜休息、慢慢逛的景點</label>
+            </div>
+            <div class="form-group">
+                <p>3. 以下三種活動，比較喜歡哪一種？</p>
+                <label><input type="radio" name="q3" value="10" checked />遊樂園、嘉年華等活潑行程</label>
+                <label><input type="radio" name="q3" value="1" />享受大自然、能悠閒發呆的鬆散行程</label>
+                <label><input type="radio" name="q3" value="5" />體驗新穎多樣的文化</label>
+            </div>
+            <div class="form-group">
+                <p>4. 在異國旅行中，你最有興趣的是？</p>
+                <label><input type="radio" name="q4" value="5" checked />異國的傳統文化特色</label>
+                <label><input type="radio" name="q4" value="10" />異國的時下流行活動和景點</label>
+                <label><input type="radio" name="q4" value="10" />異國的浪漫傳說和景點風情</label>
+            </div>
+            <div class="form-group">
+                <p>5. 計畫旅行時，你比較常＿＿＿＿？</p>
+                <label><input type="radio" name="q5" value="7" checked />出去玩就是要充實豐富才熱血！</label>
+                <label><input type="radio" name="q5" value="1" />放空、盡情享受才是旅行真諦～</label>
+            </div>
+            <div class="form-group">
+                <p>6. 旅行期間，你比較常＿＿＿＿？</p>
+                <label><input type="radio" name="q6" value="10" checked />行程日期已經訂好，最好可以按照計畫走</label>
+                <label><input type="radio" name="q6" value="3" />雖然已經訂好，但行程只是個大概，隨意更動都沒差</label>
+            </div>
+            <div class="form-group">
+                <p>7. 旅行期間，你比較常＿＿＿＿？</p>
+                <label><input type="radio" name="q7" value="1" checked />在特色咖啡館吃甜點、喝下午茶</label>
+                <label><input type="radio" name="q7" value="5" />當地傳統美食</label>
+            </div>
+            <center>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary" value="送出" />
+                </div>
+            </center>
+        </div>
+        <hr>
+    </form>
+</div>

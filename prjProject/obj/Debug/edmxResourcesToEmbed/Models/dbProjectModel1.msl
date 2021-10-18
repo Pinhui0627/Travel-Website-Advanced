@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="netdbBModelStoreContainer" CdmEntityContainer="dbProjectEntities1">
+    <EntitySetMapping Name="TableCountrys1081728">
+      <EntityTypeMapping TypeName="netdbBModel.TableCountrys1081728">
+        <MappingFragment StoreEntitySet="TableCountrys1081728">
+          <ScalarProperty Name="CounId" ColumnName="CounId" />
+          <ScalarProperty Name="CounName" ColumnName="CounName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Test";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<center>
+    <h2 style="color:brown">本功能僅限會員</h2>
+</center>
+<div class="row">
+    <div class="col-md-5">
+        <img src="~/image/excited.gif" width="70%" class="img-thumbnal" />
+    </div>
+    <div class="col-md-7">
+        <br />
+        <br />
+        <br />
+        <br />
+        <h4>快快登入會員測出你的旅行風格及最適合的景點目的地！</h4>
+        <p>@Html.ActionLink("點此登入會員", "Login", "Home")</p>
+    </div>
+</div>
+   
+

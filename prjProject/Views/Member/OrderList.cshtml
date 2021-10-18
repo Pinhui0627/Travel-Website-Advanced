@@ -1,0 +1,68 @@
+﻿@model IEnumerable<prjProject.Models.TableCusOrders1081728>
+
+@{
+    ViewBag.Title = "我的訂單";
+    Layout = "~/Views/Shared/_LayoutMember.cshtml";
+}
+
+<style>
+    .table-hover {
+        background-color:bisque;
+    }
+    #h2{
+        color:navy;
+    }
+</style>
+
+<center><h2>我的訂單</h2></center>
+
+<table class="table table-hover table-border">
+    <tr style="color:darkcyan">
+        <th>
+            @Html.DisplayNameFor(model => model.OrderGuid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Receiver)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReOrderAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderGuid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Receiver)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReOrderAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReDate)
+        </td>
+        <td>
+            <a href="@Url.Action("OrderDetail")?OrderGuid=@item.OrderGuid" class="btn btn-primary">訂單明細</a>
+        </td>
+    </tr>
+}
+
+</table>

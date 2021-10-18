@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "TestResult";
+    Layout = "~/Views/Shared/_LayoutMember.cshtml";
+}
+
+<center><h2 style="color:navy"><b>測驗結果</b></h2></center>
+
+<hr>
+
+<div class="row" style="background-color:antiquewhite">
+    <div class="col-md-5">
+        <img src="~/image/@ViewBag.Image" width="85%" class="img-thumbnal" />
+    </div>
+    <div class="col-md-7">
+        <h3 style="color:brown"><b>我的成績:@ViewBag.myScore</b></h3>
+        <h3 style="color:darkblue"><b>@ViewBag.Score：@ViewBag.Type</b></h3>
+        <p class="lead" style="color:indigo">@ViewBag.Result</p>
+    </div>
+</div>
+

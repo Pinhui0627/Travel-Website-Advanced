@@ -1,0 +1,71 @@
+﻿@model IEnumerable<prjProject.Models.TableCusOrderDetails1081728>
+
+@{
+    ViewBag.Title = "訂單明細";
+    Layout = "~/Views/Shared/_LayoutMember.cshtml";
+}
+
+<style>
+    .table-hover {
+        background-color: papayawhip;
+    }
+
+    #h2 {
+        color: navy;
+    }
+</style>
+
+<center><h2>訂單明細</h2></center>
+
+<table class="table table-hover table-border">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderGuid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TicId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TicName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Qty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsApproved)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderGuid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TicId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TicName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Qty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsApproved)
+        </td>
+    </tr>
+}
+
+</table>

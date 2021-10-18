@@ -1,0 +1,259 @@
+﻿
+@{
+    ViewBag.Title = "TraVeler";
+    Layout = "~/Views/Shared/_LayoutMember.cshtml";
+}
+
+<style>
+    .alert1 {
+        border: 2px #FF8800 solid;
+        background-color: #FF8800;
+        color: #fff;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+        .alert1:hover {
+            background-color: #EE7700;
+            color: #fff;
+            border: 2px #EE7700 solid;
+        }
+
+    .alert2 {
+        border: 2px #C10066 solid;
+        background-color: #C10066;
+        color: #fff;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+        .alert2:hover {
+            background-color: #A20055;
+            color: #fff;
+            background-color: #A20055;
+            border: 2px #A20055 solid;
+        }
+
+    .alert3 {
+        border: 2px #008844 solid;
+        background-color: #008844;
+        color: #fff;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+        .alert3:hover {
+            background-color: #008800;
+            color: #fff;
+            background-color: #008800;
+            border: 2px #008800 solid;
+        }
+
+    .close {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+    }
+
+    #myModalbuy {
+        border: 2px #7A0099 solid;
+        background-color: #fff;
+        color: #7A0099;
+        border-radius: 0px;
+        cursor: pointer;
+    }
+
+        #myModalbuy:hover {
+            background-color: #7A0099;
+            color: #fff;
+            background-color: #7A0099;
+            border: 2px #7A0099 solid;
+        }
+
+    #myModal {
+        border: 2px #003C9D solid;
+        background-color: #fff;
+        color: #003C9D;
+        border-radius: 0px;
+        cursor: pointer;
+    }
+
+        #myModal:hover {
+            background-color: #003C9D;
+            color: #fff;
+            background-color: #003C9D;
+            border: 2px #003C9D solid;
+        }
+
+    #MyBlog1 {
+        position: fixed;
+        top: 50%;
+        right: -160px;
+        background: #FFCCCC;
+        padding: 10px 20px;
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        margin-top: -50px;
+    }
+
+        #MyBlog1:hover {
+            right: -10px;
+        }
+
+        #MyBlog1 #title {
+            padding-right: 5px;
+        }
+
+    #MyBlog2 {
+        position: fixed;
+        top: 50%;
+        right: -130px;
+        background: #FFEE99;
+        padding: 10px 20px;
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        margin-top: 0px;
+    }
+
+        #MyBlog2:hover {
+            right: -10px;
+        }
+
+        #MyBlog2 #title {
+            padding-right: 5px;
+        }
+
+    #MyBlog3 {
+        position: fixed;
+        top: 50%;
+        right: -140px;
+        background: #CCFF99;
+        padding: 10px 20px;
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        margin-top: 50px;
+    }
+
+        #MyBlog3:hover {
+            right: -10px;
+        }
+
+        #MyBlog3 #title {
+            padding-right: 5px;
+        }
+
+    #MyBlog4 {
+        position: fixed;
+        top: 50%;
+        right: -60px;
+        background: #87CEFA;
+        padding: 10px 20px;
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        margin-top: 100px;
+    }
+
+        #MyBlog4:hover {
+            right: -10px;
+        }
+
+        #MyBlog4 #title {
+            padding-right: 5px;
+        }
+
+    h3 {
+        font-family: 'Noto Serif TC', serif;
+    }
+
+    a:link {
+        color: #FF3333
+    }
+
+    a:visited {
+        color: #227700
+    }
+
+    a:hover {
+        color: #800000
+    }
+</style>
+
+<script>
+      alert("Welcome to TraVeler!");
+</script>
+
+<article>
+    <div id="MyBlog1">
+        <font color="#FF8888"><span id="title">年終大優惠!</span>馬上報名可享7折優惠!</font>
+    </div>
+    <div id="MyBlog2">
+        <font color="#FFCC22"><span id="title">開心自由行~ </span>國內旅遊8折起!!</font>
+    </div>
+    <div id="MyBlog3">
+        <font color="#00DD00"><span id="title">前往夢想世界~</span>五人同行一人半價!</font>
+    </div>
+    <div id="MyBlog4">
+        <font color="#FFF5EE"><span id="title"><a href="#back"> Back to top</a></span></font>
+    </div>
+    <center><img src="~/image/traveler.jpg" width="95%" id="back"></center>
+    <br>
+    <hr>
+    <br>
+    <center>
+        <div class="container">
+            <div class="alert alert1 alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+                <strong>年終大優惠!&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </strong>馬上報名可享7折優惠!
+            </div>
+            <div class="alert alert2 alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+                <strong>開心自由行~ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </strong>國內旅遊8折起!
+            </div>
+            <div class="alert alert3 alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
+                <strong>前往夢想世界~&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </strong>五人同行一人半價!
+            </div>
+        </div>
+    </center>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <img src="~/image/ques.jpg">
+                    <div class="caption">
+                        <h3><b><font color="#191970">還在想甚麼時候有空?</font></b></h3>
+                        <p><font color="#551A8B">不用想了!跟著TraVeler走就對了!</font></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <img src="~/image/money.jpg">
+                    <div class="caption">
+                        <h3><b><font color="#191970">旅遊費用會不會太高?</font></b></h3>
+                        <p><font color="#551A8B">不用擔心!TraVeler會給您最優惠的價格!</font></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <img src="~/image/food.jpg">
+                    <div class="caption">
+                        <h3><b><font color="#191970">會不會吃不習慣當地食物?</font></b></h3>
+                        <p><font color="#551A8B">TraVeler保證給您好吃又好玩的行程!</font></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+

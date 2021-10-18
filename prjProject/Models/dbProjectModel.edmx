@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="dbProjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TableCountrys1081728">
+          <Key>
+            <PropertyRef Name="CounId" />
+          </Key>
+          <Property Name="CounId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CounName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TableCusOrderDetails1081728">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderGuid" Type="varchar" MaxLength="50" />
+          <Property Name="UserId" Type="varchar" MaxLength="20" />
+          <Property Name="TicId" Type="varchar" MaxLength="50" />
+          <Property Name="TicName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Price" Type="int" />
+          <Property Name="Qty" Type="int" />
+          <Property Name="IsApproved" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="TableCusOrders1081728">
+          <Key>
+            <PropertyRef Name="OrderGuid" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderGuid" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserId" Type="varchar" MaxLength="20" />
+          <Property Name="Receiver" Type="nvarchar" MaxLength="20" />
+          <Property Name="ReEmail" Type="varchar" MaxLength="50" />
+          <Property Name="ReOrderAddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="ReDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TableCustomers1081728">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="UserPwd" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="20" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="UserAddress" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TableTickets1081728">
+          <Key>
+            <PropertyRef Name="TicId" />
+          </Key>
+          <Property Name="TicId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TicName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Price" Type="int" />
+          <Property Name="TictImage" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TableTravels1081728">
+          <Key>
+            <PropertyRef Name="PlaceId" />
+          </Key>
+          <Property Name="PlaceId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CounId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CounName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Place" Type="nvarchar" MaxLength="50" />
+          <Property Name="Content" Type="nvarchar(max)" />
+          <Property Name="TraImage" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK__TableCusO__Order__711DBAFA">
+          <End Role="TableCusOrders1081728" Type="Self.TableCusOrders1081728" Multiplicity="0..1" />
+          <End Role="TableCusOrderDetails1081728" Type="Self.TableCusOrderDetails1081728" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TableCusOrders1081728">
+              <PropertyRef Name="OrderGuid" />
+            </Principal>
+            <Dependent Role="TableCusOrderDetails1081728">
+              <PropertyRef Name="OrderGuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="dbProjectModelStoreContainer">
+          <EntitySet Name="TableCountrys1081728" EntityType="Self.TableCountrys1081728" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TableCusOrderDetails1081728" EntityType="Self.TableCusOrderDetails1081728" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TableCusOrders1081728" EntityType="Self.TableCusOrders1081728" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TableCustomers1081728" EntityType="Self.TableCustomers1081728" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TableTickets1081728" EntityType="Self.TableTickets1081728" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TableTravels1081728" EntityType="Self.TableTravels1081728" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__TableCusO__Order__711DBAFA" Association="Self.FK__TableCusO__Order__711DBAFA">
+            <End Role="TableCusOrders1081728" EntitySet="TableCusOrders1081728" />
+            <End Role="TableCusOrderDetails1081728" EntitySet="TableCusOrderDetails1081728" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dbProjectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TableCountrys1081728">
+          <Key>
+            <PropertyRef Name="CounId" />
+          </Key>
+          <Property Name="CounId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CounName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TableCusOrderDetails1081728">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderGuid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="TicId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TicName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Int32" />
+          <Property Name="Qty" Type="Int32" />
+          <Property Name="IsApproved" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TableCusOrders1081728" Relationship="Self.FK__TableCusO__Order__711DBAFA" FromRole="TableCusOrderDetails1081728" ToRole="TableCusOrders1081728" />
+        </EntityType>
+        <EntityType Name="TableCusOrders1081728">
+          <Key>
+            <PropertyRef Name="OrderGuid" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderGuid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UserId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Receiver" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ReEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ReOrderAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ReDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="TableCusOrderDetails1081728" Relationship="Self.FK__TableCusO__Order__711DBAFA" FromRole="TableCusOrders1081728" ToRole="TableCusOrderDetails1081728" />
+        </EntityType>
+        <EntityType Name="TableCustomers1081728">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UserPwd" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TableTickets1081728">
+          <Key>
+            <PropertyRef Name="TicId" />
+          </Key>
+          <Property Name="TicId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TicName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Int32" />
+          <Property Name="TictImage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TableTravels1081728">
+          <Key>
+            <PropertyRef Name="PlaceId" />
+          </Key>
+          <Property Name="PlaceId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CounId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CounName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Place" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TraImage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK__TableCusO__Order__711DBAFA">
+          <End Role="TableCusOrders1081728" Type="Self.TableCusOrders1081728" Multiplicity="0..1" />
+          <End Role="TableCusOrderDetails1081728" Type="Self.TableCusOrderDetails1081728" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TableCusOrders1081728">
+              <PropertyRef Name="OrderGuid" />
+            </Principal>
+            <Dependent Role="TableCusOrderDetails1081728">
+              <PropertyRef Name="OrderGuid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="dbFinalProjectEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TableCountrys1081728" EntityType="Self.TableCountrys1081728" />
+          <EntitySet Name="TableCusOrderDetails1081728" EntityType="Self.TableCusOrderDetails1081728" />
+          <EntitySet Name="TableCusOrders1081728" EntityType="Self.TableCusOrders1081728" />
+          <EntitySet Name="TableCustomers1081728" EntityType="Self.TableCustomers1081728" />
+          <EntitySet Name="TableTickets1081728" EntityType="Self.TableTickets1081728" />
+          <EntitySet Name="TableTravels1081728" EntityType="Self.TableTravels1081728" />
+          <AssociationSet Name="FK__TableCusO__Order__711DBAFA" Association="Self.FK__TableCusO__Order__711DBAFA">
+            <End Role="TableCusOrders1081728" EntitySet="TableCusOrders1081728" />
+            <End Role="TableCusOrderDetails1081728" EntitySet="TableCusOrderDetails1081728" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dbProjectModelStoreContainer" CdmEntityContainer="dbFinalProjectEntities">
+          <EntitySetMapping Name="TableCountrys1081728">
+            <EntityTypeMapping TypeName="dbProjectModel.TableCountrys1081728">
+              <MappingFragment StoreEntitySet="TableCountrys1081728">
+                <ScalarProperty Name="CounId" ColumnName="CounId" />
+                <ScalarProperty Name="CounName" ColumnName="CounName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TableCusOrderDetails1081728">
+            <EntityTypeMapping TypeName="dbProjectModel.TableCusOrderDetails1081728">
+              <MappingFragment StoreEntitySet="TableCusOrderDetails1081728">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="OrderGuid" ColumnName="OrderGuid" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="TicId" ColumnName="TicId" />
+                <ScalarProperty Name="TicName" ColumnName="TicName" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TableCusOrders1081728">
+            <EntityTypeMapping TypeName="dbProjectModel.TableCusOrders1081728">
+              <MappingFragment StoreEntitySet="TableCusOrders1081728">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="OrderGuid" ColumnName="OrderGuid" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Receiver" ColumnName="Receiver" />
+                <ScalarProperty Name="ReEmail" ColumnName="ReEmail" />
+                <ScalarProperty Name="ReOrderAddress" ColumnName="ReOrderAddress" />
+                <ScalarProperty Name="ReDate" ColumnName="ReDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TableCustomers1081728">
+            <EntityTypeMapping TypeName="dbProjectModel.TableCustomers1081728">
+              <MappingFragment StoreEntitySet="TableCustomers1081728">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UserPwd" ColumnName="UserPwd" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="UserAddress" ColumnName="UserAddress" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TableTickets1081728">
+            <EntityTypeMapping TypeName="dbProjectModel.TableTickets1081728">
+              <MappingFragment StoreEntitySet="TableTickets1081728">
+                <ScalarProperty Name="TicId" ColumnName="TicId" />
+                <ScalarProperty Name="TicName" ColumnName="TicName" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="TictImage" ColumnName="TictImage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TableTravels1081728">
+            <EntityTypeMapping TypeName="dbProjectModel.TableTravels1081728">
+              <MappingFragment StoreEntitySet="TableTravels1081728">
+                <ScalarProperty Name="PlaceId" ColumnName="PlaceId" />
+                <ScalarProperty Name="CounId" ColumnName="CounId" />
+                <ScalarProperty Name="CounName" ColumnName="CounName" />
+                <ScalarProperty Name="Place" ColumnName="Place" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="TraImage" ColumnName="TraImage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

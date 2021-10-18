@@ -1,0 +1,45 @@
+﻿@model IEnumerable<prjProject.Models.TableTickets1081728>
+
+@{
+    ViewBag.Title = "票券列表";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    #myModal {
+        border: 2px #003C9D solid;
+        background-color: #fff;
+        color: #003C9D;
+        border-radius: 0px;
+        cursor: pointer;
+    }
+
+        #myModal:hover {
+            background-color: #003C9D;
+            color: #fff;
+            background-color: #003C9D;
+            border: 2px #003C9D solid;
+        }
+
+    #Ticket:hover {
+        background-color: #E0FFFF;
+    }
+</style>
+
+<center><h2>票券列表</h2></center>
+
+<div class="row" style="margin-top:20px;">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4">
+            <div class="thumbnail" id="Ticket">
+                <img src="~/image/@item.TictImage" style="width:200px;height:200px;" />
+                <div class="caption">
+                    <h4>@item.TicName</h4>
+                    <p>單價:@item.Price</p>
+                    <p><a href="@Url.Action("Login","Home")?TicId=@item.TicId" id="myModal" class="btn">加入購物車</a></p>
+                </div>
+            </div>
+        </div>
+    }
+</div>

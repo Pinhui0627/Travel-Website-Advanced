@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbProjectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TableCountrys1081728">
+    <Key>
+      <PropertyRef Name="CounId" />
+    </Key>
+    <Property Name="CounId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CounName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TableCusOrderDetails1081728">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderGuid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="TicId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TicName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Int32" />
+    <Property Name="Qty" Type="Int32" />
+    <Property Name="IsApproved" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TableCusOrders1081728" Relationship="Self.FK__TableCusO__Order__711DBAFA" FromRole="TableCusOrderDetails1081728" ToRole="TableCusOrders1081728" />
+  </EntityType>
+  <EntityType Name="TableCusOrders1081728">
+    <Key>
+      <PropertyRef Name="OrderGuid" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderGuid" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Receiver" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ReEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ReOrderAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ReDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="TableCusOrderDetails1081728" Relationship="Self.FK__TableCusO__Order__711DBAFA" FromRole="TableCusOrders1081728" ToRole="TableCusOrderDetails1081728" />
+  </EntityType>
+  <EntityType Name="TableCustomers1081728">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UserPwd" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TableTickets1081728">
+    <Key>
+      <PropertyRef Name="TicId" />
+    </Key>
+    <Property Name="TicId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TicName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Int32" />
+    <Property Name="TictImage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TableTravels1081728">
+    <Key>
+      <PropertyRef Name="PlaceId" />
+    </Key>
+    <Property Name="PlaceId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CounId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CounName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Place" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TraImage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK__TableCusO__Order__711DBAFA">
+    <End Role="TableCusOrders1081728" Type="Self.TableCusOrders1081728" Multiplicity="0..1" />
+    <End Role="TableCusOrderDetails1081728" Type="Self.TableCusOrderDetails1081728" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TableCusOrders1081728">
+        <PropertyRef Name="OrderGuid" />
+      </Principal>
+      <Dependent Role="TableCusOrderDetails1081728">
+        <PropertyRef Name="OrderGuid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="dbFinalProjectEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TableCountrys1081728" EntityType="Self.TableCountrys1081728" />
+    <EntitySet Name="TableCusOrderDetails1081728" EntityType="Self.TableCusOrderDetails1081728" />
+    <EntitySet Name="TableCusOrders1081728" EntityType="Self.TableCusOrders1081728" />
+    <EntitySet Name="TableCustomers1081728" EntityType="Self.TableCustomers1081728" />
+    <EntitySet Name="TableTickets1081728" EntityType="Self.TableTickets1081728" />
+    <EntitySet Name="TableTravels1081728" EntityType="Self.TableTravels1081728" />
+    <AssociationSet Name="FK__TableCusO__Order__711DBAFA" Association="Self.FK__TableCusO__Order__711DBAFA">
+      <End Role="TableCusOrders1081728" EntitySet="TableCusOrders1081728" />
+      <End Role="TableCusOrderDetails1081728" EntitySet="TableCusOrderDetails1081728" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
