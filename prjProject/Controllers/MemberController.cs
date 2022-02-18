@@ -158,7 +158,7 @@ namespace prjProject.Controllers
         {
             //取得會員登入帳號並指定給 UserId
             string UserId = User.Identity.Name;
-            //建立唯一的是別值並指定給guid，當作訂單編號
+            //建立唯一的識別值並指定給guid，當作訂單編號
             string guid = Guid.NewGuid().ToString();
 
             //建立訂單主檔資料
